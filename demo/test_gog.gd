@@ -19,21 +19,29 @@ func _ready():
 
 	var success = galaxy.initialize(clientid, clientsecret)
 
+	
 	if success:
-		status_label.text = "Galaxy initialized!\nWaiting for authentication..."
+		status_label.text = "Galaxy initialized!\nWaiting for authentication baby..."
 	else:
 		status_label.text = "Galaxy initialization FAILED"
 
+var doonce=false;
 
 func _process(_delta):
 	if galaxy == null:
 		status_label.text = "ERROR: Galaxy is NULL"
 		return
 	
-	galaxy.process()
-
+	if (!doonce && galaxy.GetAchievement("HANG_OF_IT")):
+		galaxy.SetStatInt("TestLegacyInt",galaxy.GetStatInt("TestLegacyInt")+1);
+		galaxy.SetStatFloat("TestLegacyFloat",galaxy.GetStatFloat("TestLegacyFloat")+3.0);
+		doonce=true;
+	
+	galaxy.Update();
+	#galaxy.RequestStatsAndAchievements(); do this whenever required probably on a timer
+	
 	if galaxy.is_logged_in():
-		status_label.text = "GOG Galaxy\n\n✓ LOGGED IN \nAchievement HEAR ME:"+str(galaxy.GetAchievement("HEAR_ME"))+"\nAchievement HANG OF IT:"+str(galaxy.GetAchievement("HANG_OF_IT"));
+		status_label.text = "GOG Galaxy\n\n✓ LOGGED IN \nAchievement HEAR ME:"+str(galaxy.GetAchievement("HEAR_ME"))+"\nAchievement HANG OF IT:"+str(galaxy.GetAchievement("HANG_OF_IT"))+"\nStat Int:"+str(galaxy.GetStatInt("TestLegacyInt"))+"\nStat Float:"+str(galaxy.GetStatFloat("TestLegacyFloat"));
 		
 	else:
 		status_label.text = "GOG Galaxy\n\nWaiting for authentication..."

@@ -1,0 +1,8 @@
+demo/.godot/
+demo/addons/
+include/galaxy/
+libraries/
+*.dblite
+src/*.obj
+*.bak
+*.zip
