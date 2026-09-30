@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4mwmw64bti8x"]
+
+[ext_resource type="Script" uid="uid://buy4xqrhnja65" path="res://test_gog.gd" id="1_37kl0"]
+
+[node name="Test" type="Node2D" unique_id=428864593]
+script = ExtResource("1_37kl0")
+
+[node name="StatusLabel" type="Label" parent="." unique_id=1370319599]
+offset_right = 40.0
+offset_bottom = 23.0

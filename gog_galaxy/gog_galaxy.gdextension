@@ -1,0 +1,33 @@
+[configuration]
+
+entry_symbol = "gog_galaxy_library_init"
+compatibility_minimum = "4.6"
+reloadable = true
+
+
+[libraries]
+
+windows.debug.x86_64 = "res://addons/gog_galaxy/bin/gog_galaxy.windows.template_debug.x86_64.dll"
+windows.release.x86_64 = "res://addons/gog_galaxy/bin/gog_galaxy.windows.template_release.x86_64.dll"
+
+macos.debug.universal = "res://addons/gog_galaxy/bin/gog_galaxy.macos.template_release.universal.dylib"
+macos.release.universal = "res://addons/gog_galaxy/bin/gog_galaxy.macos.template_release.universal.dylib"
+
+linux.debug.x86_64 = "res://addons/gog_galaxy/bin/gog_galaxy.linux.template_debug.x86_64.so"
+linux.release.x86_64 = "res://addons/gog_galaxy/bin/gog_galaxy.linux.template_release.x86_64.so"
+
+[dependencies]
+
+windows.debug = {
+    "res://addons/gog_galaxy/bin/Galaxy64.dll": ""
+}
+windows.release = {
+    "res://addons/gog_galaxy/bin/Galaxy64.dll": ""
+}
+
+macos.debug = {
+    "res://addons/gog_galaxy/bin/libGalaxy.dylib": "Contents/Frameworks"
+}
+macos.release = {
+    "res://addons/gog_galaxy/bin/libGalaxy.dylib": "Contents/Frameworks"
+}
