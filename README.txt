@@ -3,7 +3,7 @@ Works on 4.6 [probably prior too, haven't tested]
 
 
 How to install:
-1) Download the framework from https://devportal.gog.com/galaxy/components/sdk
+1) Download the framework from https://devportal.gog.com/galaxy/components/sdk (YOU NEED TO BE A GOG DEVELOPER)
 2) Copy "Galaxy64.dll" and "libGalaxy.dylib" inside the following directory
 
 -gog_galaxy\bin
