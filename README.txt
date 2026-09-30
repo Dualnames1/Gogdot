@@ -22,3 +22,9 @@ To build it on your own:
 6) Run "scons" via Powershell(windows) or Terminal(OSX) on the directory you downloaded/cloned the repo files.
 
 The libraries will be found afterwards in output.
+
+The plugin was specifically created to allow GOG integration for Nighthawks!
+
+Games currently utilizing it:
+- Nighthawks: https://www.gog.com/en/game/nighthawks
+  Platforms: Windows · Linux · macOS
